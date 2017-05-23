@@ -61,13 +61,13 @@ class TaskApp extends React.Component{
 		return <div>
 				<div className="row" id="header">
 					<h3 className="col-md-10">Add a Task</h3>
-					<button className="btn btn-primary col-md-2" onClick={() => this.saveTasks()}>Save Tasks</button>
+					<button className="btn btn-primary col-md-2" onClick={() => this.saveTasks()}><span className="glyphicon glyphicon-floppy-disk"></span> Save Tasks</button>
 				</div>
 				<form onSubmit={(e) => this.addTask(e)}>
 					<div className="input-group form-group">
 						<input className="form-control" onChange={(e) => this.taskChange(e)} value={this.state.newTask}/>
 						<div className="input-group-btn">
-							<button className="btn btn-primary">Add Task</button>
+							<button className="btn btn-primary"><span className="glyphicon glyphicon-plus"></span> Add Task</button>
 						</div>
 					</div>
 				</form>
@@ -75,8 +75,8 @@ class TaskApp extends React.Component{
 					{this.state.tasks.map(
 						(item, index) => <li key={index} className={"list-group-item clearfix " + (item.complete == 1 ? "list-group-item-success" : "list-group-item-info")}>
 									{item.name}
-									{(item.complete == 1 ? "" : <button className="btn btn-success pull-right" onClick={() => this.completeTask(index)}>Complete</button>)}
-									{<button className="btn btn-danger pull-right" onClick={() => this.deleteTask(index)}>Remove</button>}
+									{(item.complete == 1 ? "" : <button className="btn btn-success pull-right" onClick={() => this.completeTask(index)}><span className="glyphicon glyphicon-ok"></span> Complete</button>)}
+									{<button className="btn btn-danger pull-right" onClick={() => this.deleteTask(index)}><span className="glyphicon glyphicon-trash"></span> Remove</button>}
 								</li>
 					)}
 				</ul>
