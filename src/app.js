@@ -60,7 +60,7 @@ class TaskApp extends React.Component{
 	render(){
 		return <div>
 				<div id="header">
-					<h3 className="">Add a Task</h3>
+					<h3>Task List</h3>
 					<button className="btn btn-primary save-btn" onClick={() => this.saveTasks()}>
 						<span className="glyphicon glyphicon-floppy-disk"></span>
 						<span className="btn-text">Save Tasks</span>
@@ -68,7 +68,7 @@ class TaskApp extends React.Component{
 				</div>
 				<form onSubmit={(e) => this.addTask(e)}>
 					<div className="input-group form-group">
-						<input className="form-control" onChange={(e) => this.taskChange(e)} value={this.state.newTask}/>
+						<input className="form-control" placeholder="Type in your new task here!" onChange={(e) => this.taskChange(e)} value={this.state.newTask}/>
 						<div className="input-group-btn">
 							<button className="btn btn-primary">
 								<span className="glyphicon glyphicon-plus"></span>
