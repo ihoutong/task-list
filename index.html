@@ -3,21 +3,55 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<style>
+			#content{
+				max-width: 1340px;
+				margin: 0 auto;
+			}
+			#content p{
+				font-size: 20px;
+			}
+			#content p span{
+				display: block;
+			}
 			#task-list-wrapper{
+				max-width: 700px;
 				margin: 0 auto;
 				float: none;
 			}
-			#header .col-md-2{
-				margin-top: 10px;
-				margin-left: -15px;
+			#task-list-wrapper button .btn-text{
+				margin-left: 5px;
 			}
+			
+			#header{
+				display: inline-block;
+				position: relative;
+				width: 100%;
+			}
+			#header .save-btn{
+				position: absolute;
+				top: 15px;
+				right: 0;
+			}
+			
+			@media screen and (max-width: 995px){
+				#task-list-wrapper button .btn-text{
+					display: none;
+				}
+			}
+			
 		</style>
 		<title>Task List</title>
 	</head>
 	<body>
-		<div id="task-list-wrapper" class="col-md-4"></div>
-		<!--<textarea class="col-md-4 c-align"></textarea>-->
-
+		<div id="content">
+			<p class="text-primary">
+				<span>A simple task-list built using ReactJS using BabelJS as the preprocessor with styles from Bootstrap.</span>
+				<span>To add a task, simply add a task to the input next to Add Task and click on Add Task afterwards.</span>
+				<span>Pressing "Save Tasks" will save your task so the next time you come to this page, you can view all your tasks again.</span>
+			</p>
+			<div id="task-list-wrapper"></div>
+			<!--<textarea class="col-md-4 c-align"></textarea>-->
+		</div>
 	<script src="https://unpkg.com/react@15/dist/react.js"></script>
 	<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
 	<script src="./lib/app.js"></script>

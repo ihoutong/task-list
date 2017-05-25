@@ -59,15 +59,21 @@ class TaskApp extends React.Component{
 
 	render(){
 		return <div>
-				<div className="row" id="header">
-					<h3 className="col-md-10">Add a Task</h3>
-					<button className="btn btn-primary col-md-2" onClick={() => this.saveTasks()}><span className="glyphicon glyphicon-floppy-disk"></span> Save Tasks</button>
+				<div id="header">
+					<h3 className="">Add a Task</h3>
+					<button className="btn btn-primary save-btn" onClick={() => this.saveTasks()}>
+						<span className="glyphicon glyphicon-floppy-disk"></span>
+						<span className="btn-text">Save Tasks</span>
+					</button>
 				</div>
 				<form onSubmit={(e) => this.addTask(e)}>
 					<div className="input-group form-group">
 						<input className="form-control" onChange={(e) => this.taskChange(e)} value={this.state.newTask}/>
 						<div className="input-group-btn">
-							<button className="btn btn-primary"><span className="glyphicon glyphicon-plus"></span> Add Task</button>
+							<button className="btn btn-primary">
+								<span className="glyphicon glyphicon-plus"></span>
+								<span className="btn-text">Add Task</span>
+							</button>
 						</div>
 					</div>
 				</form>
@@ -75,8 +81,16 @@ class TaskApp extends React.Component{
 					{this.state.tasks.map(
 						(item, index) => <li key={index} className={"list-group-item clearfix " + (item.complete == 1 ? "list-group-item-success" : "list-group-item-info")}>
 									{item.name}
-									{(item.complete == 1 ? "" : <button className="btn btn-success pull-right" onClick={() => this.completeTask(index)}><span className="glyphicon glyphicon-ok"></span> Complete</button>)}
-									{<button className="btn btn-danger pull-right" onClick={() => this.deleteTask(index)}><span className="glyphicon glyphicon-trash"></span> Remove</button>}
+									{(item.complete == 1 ? "" : 
+										<button className="btn btn-success pull-right" onClick={() => this.completeTask(index)}>
+											<span className="glyphicon glyphicon-ok"></span>
+											<span className="btn-text">Complete</span>
+										</button>
+									)}
+									{<button className="btn btn-danger pull-right" onClick={() => this.deleteTask(index)}>
+										<span className="glyphicon glyphicon-trash"></span>
+										<span className="btn-text">Remove</span>
+									</button>}
 								</li>
 					)}
 				</ul>
