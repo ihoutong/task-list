@@ -1,0 +1,46 @@
+#header{
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	
+	.save-btn {
+		position: absolute;
+		top: 15px;
+		right: 0;
+	}
+}
+
+#content{
+	max-width: 1340px;
+	margin: 0 auto;
+	
+	p{
+		font-size: 20px;
+		
+		span{
+			display: block;
+		}
+	}
+}
+
+#task-list-wrapper{
+	max-width: 700px;
+	margin: 0 auto;
+	float: none;
+	
+	button .button-text{
+		margin-left: 5px;
+	}
+}
+
+@media screen and (max-width: 995px){
+	#task-list-wrapper button .btn-text{
+		display: none;
+	}
+}
+
+@media screen and (max-width: 700px){
+	#task-list-wrapper{
+		margin: 0 20px;
+	}
+}
