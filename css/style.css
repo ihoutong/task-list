@@ -19,7 +19,7 @@
   max-width: 700px;
   margin: 0 auto;
   float: none; }
-  #task-list-wrapper button .button-text {
+  #task-list-wrapper button .btn-text {
     margin-left: 5px; }
 
 @media screen and (max-width: 995px) {
